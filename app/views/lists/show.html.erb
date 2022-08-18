@@ -1,14 +1,16 @@
 <H1><%= @list.name  %></H1>
 
+<%= link_to "Add a list", new_list_path %>
+<%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %>
+
 <p>Movies</p>
 <% @list.bookmarks.each do |bookmark| %>
 <ul>
   <li>
-  <%= bookmark.movie.title %> <%= "- #{bookmark.comment}" %>
+  <%= bookmark.movie.title %> <%= " / Comment - #{bookmark.comment}" %> <%= link_to '🗑', bookmark_path(bookmark), data: {turbo_method: :delete} %>
   </li>
 </ul>
 <% end %>
 
-<%= link_to "Add a list", new_list_path %>
-<%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %>
+
 <%# link_to "🗑"  %>
