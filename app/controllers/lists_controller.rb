@@ -13,4 +13,17 @@ class ListsController < ApplicationController
     @lists = List.new
   end
 
+  def create
+    @lists = List.new(list_param)
+    @lists.save
+    redirect_to lists_path
+  end
+
+
+end
+
+private
+
+def list_param
+  params.require(:list).permit(:name)
 end

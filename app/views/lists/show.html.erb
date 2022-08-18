@@ -4,9 +4,11 @@
 <% @list.movies.each do |movie| %>
 <ul>
   <li>
-  <%= movie.title %>
+  <%= movie.title  %>
   </li>
 </ul>
 <% end %>
 
 <%= link_to "Add a list", new_list_path %>
+<%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %>
+<%# link_to "🗑"  %>

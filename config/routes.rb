@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   # -------Movies
 
   resources :movies
-  resources :lists
+  resources :lists do
+    resources :bookmarks
+  end
     # Create Movies
     # Read Movies
+
     # Update Movies
     # Delete Movies
 
