@@ -10,9 +10,10 @@ require "json"
 require "open-uri"
 require 'faker'
 
+Bookmark.destroy_all
 Movie.destroy_all
 List.destroy_all
-Bookmark.destroy_all
+
 
 #parse movie list using the API
 
@@ -26,7 +27,7 @@ films = users['results']
     movie = Movie.create!(
       title:  film['original_title'],
       overview: film['overview'],
-      poster_url: film['poster_path'],
+      poster_url: "https://image.tmdb.org/t/p/w500#{film['poster_path']}",
       rating: film['vote_average'],
     )
 # puts " Titre - #{user["original_title"]} / Overview - #{user["overview"]}"
