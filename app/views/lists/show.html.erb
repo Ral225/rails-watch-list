@@ -1,10 +1,10 @@
 <H1><%= @list.name  %></H1>
 
 <p>Movies</p>
-<% @list.movies.each do |movie| %>
+<% @list.bookmarks.each do |bookmark| %>
 <ul>
   <li>
-  <%= movie.title  %>
+  <%= bookmark.movie.title %> <%= "- #{bookmark.comment}" %>
   </li>
 </ul>
 <% end %>
