@@ -2,7 +2,7 @@
 <%= simple_form_for [@list, @bookmarks] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
-  <%= f.button :submit %>
+  <%= f.submit class: "btn btn-ghost" %>
 <% end %>
 
   <%# <%= f.association :list %>

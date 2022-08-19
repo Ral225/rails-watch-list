@@ -1,9 +1,17 @@
-<h1>Lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1712&q=80)">
+  <div class="container">
+    <h1>List</h1>
+    <%= link_to "Add a list", new_list_path, class: "btn btn-ghost" %>
+  </div>
+</div>
 
+
+<div class="flex-container">
 <% @lists.each do |list|%>
-<ul>
-  <li><%= link_to list.name, list_path(list)  %></li>
-</ul>
+  <%# <div class="cards"> %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to list.name, list_path(list) %>
+    <%# </div> %>
+  </div>
 <% end %>
-
-<%= link_to "Add a list", new_list_path %>
+</div>

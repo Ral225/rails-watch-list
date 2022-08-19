@@ -15,7 +15,7 @@ class BookmarksController < ApplicationController
     # We need to connec bookmark withh list
     @bookmarks.list = @list
     if @bookmarks.save
-      redirect_to lists_path(@list)
+      redirect_to list_path(@list)
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmarks = Bookmark.find(params[:id])
     @bookmarks.destroy
-    redirect_to lists_path(@list)
+    redirect_to list_path(@bookmarks.list_id), status: :see_other
   end
 
 

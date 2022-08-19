@@ -1,4 +1,3 @@
-
 class ListsController < ApplicationController
 
   def index
@@ -16,14 +15,18 @@ class ListsController < ApplicationController
   def create
     @lists = List.new(list_param)
     @lists.save
-    redirect_to lists_path
+    redirect_to root_path
   end
 
-
-end
+  def destroy
+    @list = List.destroy(params[:id])
+    redirect_to root_path, status: :see_other
+  end
 
 private
 
 def list_param
   params.require(:list).permit(:name)
+end
+
 end
